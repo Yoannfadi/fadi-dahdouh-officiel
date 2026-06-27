@@ -19,7 +19,7 @@ export default function Nav() {
   return (
     <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
       <Link href="/" className="brand" onClick={() => setOpen(false)}>
-        Fadi <span>Dahdouh</span>
+        FADI DAHDOUH
       </Link>
       <div className={`nav-links ${open ? "open" : ""}`}>
         {nav.slice(1).map((item) => (
