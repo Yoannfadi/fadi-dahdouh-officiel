@@ -29,3 +29,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Photos brutes lourdes (~2,4 Go) — conservées sur disque + sauvegarde séparée (Drive), NON versionnées dans Git.
+# Les mappings/notations (.md) restent suivis ; seuls les dossiers d'images sont ignorés.
+/assets/13-SHOOTS/2026-HERO/RAW/
+/assets/13-SHOOTS/2026-HERO/SELECTS/
+/assets/13-SHOOTS/2026-HERO/REJECTED/
