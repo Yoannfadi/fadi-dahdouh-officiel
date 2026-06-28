@@ -362,3 +362,41 @@ textarea{resize:vertical;min-height:90px}
   .jard-chemin-light{justify-self:start;max-width:300px}
   .jard-silence-light{width:82%}
 }
+
+/* ---- VRAIES PHOTOS (override des placeholders) ---- */
+.jard-portrait,.jard-voix-portrait,.jard-chemin-img{margin:0;overflow:hidden;background:none}
+.jard-portrait img,.jard-voix-portrait img,.jard-chemin-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Bloc 2 — Silence : photo pleine largeur qui émerge/du noir, sans texte */
+.jard-silence{min-height:auto;display:block;position:relative;overflow:hidden}
+.jard-silence img{
+  width:100%;height:88vh;object-fit:cover;object-position:50% 38%;display:block;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 16%,#000 84%,transparent 100%);
+          mask-image:linear-gradient(to bottom,transparent 0,#000 16%,#000 84%,transparent 100%);
+}
+
+/* Bloc 3 — Voix : texte à gauche, présence (photo) à droite */
+.jard-voix{
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+  max-width:1320px;margin:0 auto;padding:0 120px;min-height:82vh;
+}
+.jard-voix-portrait{
+  width:100%;max-width:440px;aspect-ratio:4/5;max-height:62vh;justify-self:end;
+  -webkit-mask-image:radial-gradient(78% 84% at 55% 45%,#000 54%,transparent 100%);
+          mask-image:radial-gradient(78% 84% at 55% 45%,#000 54%,transparent 100%);
+}
+
+/* Bloc 4 — Trois Chemins : texte à gauche, photo à droite (axe constant) */
+.jard-chemin-img{
+  width:100%;max-width:440px;aspect-ratio:4/5;max-height:54vh;justify-self:end;order:2;
+  -webkit-mask-image:radial-gradient(80% 86% at 50% 45%,#000 56%,transparent 100%);
+          mask-image:radial-gradient(80% 86% at 50% 45%,#000 56%,transparent 100%);
+}
+.jard-chemin-text{order:1}
+
+@media(max-width:900px){
+  .jard-voix{grid-template-columns:1fr;gap:40px;padding:60px 26px}
+  .jard-voix-portrait{justify-self:start;max-width:360px}
+  .jard-silence img{height:58vh}
+  .jard-chemin-img{justify-self:start;max-width:320px;order:2}
+}
